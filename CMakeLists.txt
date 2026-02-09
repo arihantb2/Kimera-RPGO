@@ -1,6 +1,9 @@
 cmake_minimum_required (VERSION 3.5)
 project(kimera_rpgo VERSION 1.0 LANGUAGES CXX)
 
+include(GNUInstallDirs)
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
 endif()
@@ -68,7 +71,6 @@ configure_file(tests/test_config.h.in tests/test_config.h)
 
 ###########################################################################
 # Installation
-include(GNUInstallDirs)
 set(INSTALL_CONFIGDIR ${CMAKE_INSTALL_LIBDIR}/cmake/KimeraRPGO)
 
 install(TARGETS KimeraRPGO
